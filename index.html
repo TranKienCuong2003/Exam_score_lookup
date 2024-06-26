@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu điểm tổ hợp xét tuyển đại học</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://biu.edu.vn/wp-content/uploads/2021/06/favicon-1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form">
+        <h2 class="form__title">
+            Tra cứu điểm các tổ hợp xét tuyển đại học cao đẳng
+        </h2>
+
+        <table class="form__table">
+            <tr class="form__row">
+                <td colspan="2" class="form__label">
+                    Họ và tên:
+                </td>
+
+                <td colspan="3" class="form__input-cell">
+                    <input type="text" id="hoTen" class="form__input">
+                </td>
+
+                <td colspan="3" class="form__label">
+                    Môn nhân hệ số 2:
+                </td>
+
+                <td colspan="3" class="form__input-cell">
+                    <select id="monHeSo2" class="form__select">
+                        <option value="none">
+                            Không môn nào
+                        </option>
+
+                        <option value="toan">
+                            Toán
+                        </option>
+
+                        <option value="ly">
+                            Lý
+                        </option>
+
+                        <option value="hoa">
+                            Hóa
+                        </option>
+
+                        <option value="sinh">
+                            Sinh
+                        </option>
+
+                        <option value="van">
+                            Văn
+                        </option>
+
+                        <option value="su">
+                            Sử
+                        </option>
+
+                        <option value="dia">
+                            Địa
+                        </option>
+
+                        <option value="gdcd">
+                            GDCD
+                        </option>
+
+                        <option value="nn">
+                            Ngoại ngữ
+                        </option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="form__row">
+                <td colspan="10" class="form__separator"></td>
+            </tr>
+
+            <tr class="form__row form__header-row">
+                <th class="form__header">
+                    Toán
+                </th>
+
+                <th class="form__header">
+                    Văn
+                </th>
+
+                <th class="form__header">
+                    Ngoại ngữ
+                </th>
+
+                <th class="form__header">
+                    Tổ hợp
+                </th>
+            </tr>
+            
+            <tr class="form__row form__input-row">
+                <td class="form__input-cell">
+                    <input type="number" id="toan" class="form__input form__input--number" max="10" min="0">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="van" class="form__input form__input--number" max="10" min="0">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="nn" class="form__input form__input--number" max="10" min="0">
+                </td>
+
+                <td class="form__input-cell">
+                    <select id="tohop" class="form__select">
+                        <option value="none">
+                            Chọn tổ hợp
+                        </option>
+
+                        <option value="tuNhien">
+                            Tự nhiên
+                        </option>
+
+                        <option value="xaHoi">
+                            Xã hội
+                        </option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="form__row form__input-row" id="tuNhienRow" style="display: none;">
+                <td class="form__input-cell">
+                    <input type="number" id="ly" class="form__input form__input--number" max="10" min="0" placeholder="Lý">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="hoa" class="form__input form__input--number" max="10" min="0" placeholder="Hóa">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="sinh" class="form__input form__input--number" max="10" min="0" placeholder="Sinh">
+                </td>
+
+                <td class="form__input-cell"></td>
+            </tr>
+
+            <tr class="form__row form__input-row" id="xaHoiRow" style="display: none;">
+                <td class="form__input-cell">
+                    <input type="number" id="su" class="form__input form__input--number" max="10" min="0" placeholder="Sử">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="dia" class="form__input form__input--number" max="10" min="0" placeholder="Địa">
+                </td>
+
+                <td class="form__input-cell">
+                    <input type="number" id="gdcd" class="form__input form__input--number form__input--GDCD" max="10" min="0" placeholder="GDCD">
+                </td>
+
+                <td class="form__input-cell"></td>
+            </tr>
+
+            <tr class="form__row">
+                <td colspan="10" class="form__separator"></td>
+            </tr>
+
+            <tr class="form__row">
+                <td colspan="3" class="form__label">
+                    Đối tượng ưu tiên:
+                </td>
+
+                <td colspan="2" class="form__input-cell">
+                    <select id="doiTuongUuTien" class="form__select form__select--priority">
+                        <option value="none">
+                            Không
+                        </option>
+
+                        <option value="1">
+                            1
+                        </option>
+
+                        <option value="2">
+                            2
+                        </option>
+
+                        <option value="3">
+                            3
+                        </option>
+                    </select>
+                </td>
+
+                <td colspan="3" class="form__label">
+                    Khu vực ưu tiên:
+                </td>
+
+                <td colspan="2" class="form__input-cell">
+                    <select id="khuVucUuTien" class="form__select form__select--area">
+                        <option value="KV1">
+                            Khu vực 1
+                        </option>
+
+                        <option value="KV2">
+                            Khu vực 2
+                        </option>
+
+                        <option value="KV2NT">
+                            Khu vực 2 - Nông thôn
+                        </option>
+
+                        <option value="KV3">
+                            Khu vực 3
+                        </option>
+                    </select>
+                </td>
+            </tr>            
+        </table>
+    </div>
+
+    <div id="ketqua" class="results" style="display:none;">
+        <h3 class="results__title">
+            Kết quả các tổ hợp xét tuyển
+        </h3>
+
+        <table id="tableKetQua" class="results__table"></table>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
